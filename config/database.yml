@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: develop
+  #schema_search_path: myapp,sharedapp,public
+
+test:
+  <<: *default
+  database: test
+
+production:
+  <<: *default
+  database: production
+  username: desafio-back-end
+  password: <%= ENV['DESAFIO-BACK-END_DATABASE_PASSWORD'] %>

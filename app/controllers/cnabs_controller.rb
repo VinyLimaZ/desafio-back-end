@@ -7,9 +7,10 @@ class CnabsController < ApplicationController
     cnab = Cnab.new(file: cnab_params)
 
     if cnab.save
+      CnabParserJob.perform_now(cnab.id)
       flash[:success] = 'Mensagem de sucesso'
     else
-      flash[:error] = 'Menmsagem de falha'
+      flash[:error] = 'Mensagem de falha'
     end
     redirect_to :new_cnab
   end

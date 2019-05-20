@@ -1,5 +1,10 @@
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
+    <div row center>
+      <blockquote>
+        <span><%= flash[:success] || flash[:error] %></span>
+      </blockquote>
+    </div>
     <br><br>
     <div class="row center">
       <%= form_for @cnab, url: { action: 'upload' }, html: { class: 'col s12 form'} do |f| %>

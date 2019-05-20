@@ -1,14 +1,11 @@
 FactoryBot.define do
   factory :transaction do
     kind { 1 }
-    date { "2019-05-17" }
-    time { "MyString" }
-    value { "9.99" }
-    person_document { "MyString" }
-    card { "MyString" }
-    store_name { "MyString" }
-    store_owner_name { "MyString" }
-    store { nil }
-    cnab { nil }
+    date_time { Time.local("2019", "05", "17", "11", "50", "13") }
+    value { "12345" }
+    document { "12345678901" }
+    card { "1234567890123" }
+    association :store
+    association :cnab
   end
 end

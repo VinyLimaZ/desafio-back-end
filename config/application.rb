@@ -36,5 +36,6 @@ module DesafioBackEnd
 
     config.time_zone = 'Brasilia'
     config.serve_static_assets = true
+    config.queue_adapter = :sidekiq
   end
 end

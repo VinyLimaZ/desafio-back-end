@@ -30,13 +30,10 @@ ActiveRecord::Schema.define(version: 2019_05_17_174651) do
 
   create_table "transactions", force: :cascade do |t|
     t.integer "kind"
-    t.date "date"
-    t.string "time"
-    t.decimal "value"
-    t.string "person_document"
+    t.datetime "date_time"
+    t.integer "value"
+    t.string "document"
     t.string "card"
-    t.string "store_name"
-    t.string "store_owner_name"
     t.bigint "store_id"
     t.bigint "cnab_id"
     t.datetime "created_at", null: false

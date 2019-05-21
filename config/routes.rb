@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     post '/upload', to: 'cnabs#upload'
   end
 
+  resources :stores, only: :index
+
   mount Sidekiq::Web => '/sidekiq'
 end

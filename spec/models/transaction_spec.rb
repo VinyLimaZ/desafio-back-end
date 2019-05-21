@@ -25,4 +25,12 @@ describe Transaction, type: :model do
       expect(transaction.document).to eq('12345678901')
     end
   end
+
+  describe '#price' do
+    let(:transaction) { create(:transaction) }
+    subject { transaction.price }
+    describe 'return a meaningful value' do
+      it { is_expected.to eq('123.45') }
+    end
+  end
 end

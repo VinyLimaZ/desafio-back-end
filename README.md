@@ -1,3 +1,21 @@
+Hello guys, that's my solution to the problem!
+
+How to run:
+
+Install docker (You can have instruction on the official website)
+Install docker-compose
+
+Run: docker-compose up
+
+Access: localhost:3000
+
+Be happy!
+
+TODO:
+Need to make frontend beautiful again;
+Need to abstract some things on models that has place on decorators/presenters
+Need to test more!
+
 # Desafio programação - para vaga Back-end
 
 Por favor leiam este documento do começo ao fim, com muita atenção.

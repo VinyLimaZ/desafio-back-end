@@ -7,10 +7,10 @@ class CnabsController < ApplicationController
     cnab = Cnab.new(file: cnab_params)
 
     if cnab.save
-      CnabParserJob.perform_now(cnab.id)
-      flash[:success] = 'Mensagem de sucesso'
+      CnabParserJob.perform_later(cnab.id)
+      flash[:success] = 'Cnab salvo, iremos processa-lo em instantes'
     else
-      flash[:error] = 'Mensagem de falha'
+      flash[:error] = "Falha no upload do arquivo. Favor verifica-lo e tentar novamente"
     end
     redirect_to :new_cnab
   end
